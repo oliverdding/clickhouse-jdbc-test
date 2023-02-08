@@ -12,7 +12,7 @@ lazy val root = (project in file("."))
       "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
       "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
       "org.apache.spark" %% "spark-sql-kafka-0-10" % sparkVersion,
-      "com.clickhouse" % "clickhouse-jdbc" % "0.4.0" exclude("*", "*") classifier "all"
+      "com.clickhouse" % "clickhouse-jdbc" % "0.4.0" classifier "all"
     )
   )
 
