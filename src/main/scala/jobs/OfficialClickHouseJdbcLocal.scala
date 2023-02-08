@@ -7,21 +7,6 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
 
 import java.util.Properties
 
-/*
-    create database if not exists test;
-    drop table if exists test.test;
-    create table if not exists test.test (
-      topic String,
-      offset Int64,
-      value String
-    ) Engine = MergeTree()
-    ORDER BY (topic, offset);
-     */
-
-/*
-kafka-topics --create --topic test --bootstrap-server localhost:9092
-kafka-console-producer --topic test --bootstrap-server localhost:9092
- */
 object OfficialClickHouseJdbcLocal extends ApplicationSpec {
 
   val jdbcUrl: String = "jdbc:clickhouse://127.0.0.1:8123/test"

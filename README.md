@@ -2,13 +2,22 @@
 
 https://github.com/ClickHouse/clickhouse-java/issues/1227
 
+---
+
+WARN
+
+You must re-assembly the jar after modifying any source code.
+
+In other words, repeat the steps 5, 6, 7.
+
+---
+
 ## How to run
 
 1. Install spark 2.4.5 locally and set $SPARK_HOME
 2. Install JDK8, scala 2.11 and sbt
-3. Build assembly jar: `sbt assembly`
-4. Start clickhouse, zookeeper and kafka: `docker compose up -d`
-5. Initialize clickhouse database and table in clickhouse pod
+3. Start clickhouse, zookeeper and kafka: `docker compose up -d`
+4. Initialize clickhouse database and table in clickhouse pod
 
     ```sql
     create database if not exists test;
@@ -21,6 +30,7 @@ https://github.com/ClickHouse/clickhouse-java/issues/1227
     ORDER BY (topic, offset);
     ```
 
+5. Build assembly jar: `sbt assembly`
 6. Start spark app
 
     ```bash
